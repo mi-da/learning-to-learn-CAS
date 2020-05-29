@@ -1,7 +1,7 @@
 # Dataset
 
 
-<div style="overflow: scroll; height:400px;">
+<div style="height:400px;">
 
 <table class="table table-striped table-hover table-condensed" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
