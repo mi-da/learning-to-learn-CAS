@@ -2,380 +2,806 @@
 title: 'Learning to learn in Collective Self-adaptive Systems: Automated Reasoning
   for System Design Patterns'
 output:
-  pdf_document: default
   html_document: 
     keep_md: yes
+  pdf_document: default
 ---
 
 # Dataset
 
 
+
 ```r
-dataset
+kable(dataset) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
 
-```
-##                                                                                                                Title
-## 1                                                       Pervasive Self-Learning with Multi-modal Distributed Sensors
-## 2                                       Distributed W-Learning: Multi-Policy Optimization in Self-Organizing Systems
-## 3                                                     Self-organized Fault-tolerant Routing in Peer-to-Peer Overlays
-## 4                                                  Self-organizing Bandwidth Sharing in Priority-Based Medium Access
-## 5  Incremental Social Learning Applied to a Decentralized Decision-Making Mechanism: Collective Learning Made Faster
-## 6                                                   Simulating Human Single Motor Units Using Self-Organizing Agents
-## 7                        Learning to be Different: Heterogeneity and Efficiency in Distributed Smart Camera Networks
-## 8                                Self-Organizational Reciprocal Agents for Conflict Avoidance in Allocation Problems
-## 9                              A Mutual Influence Detection Algorithm for Systems with Local Performance Measurement
-## 10                                    Towards Dynamic Epistemic Learning of Actions in Autonomic Multi-agent Systems
-## 11                                                        Cooperative Resource Allocation in Open Systems of Systems
-## 12                    Multiagent Reinforcement Social Learning Toward Coordination in Cooperative Multiagent Systems
-## 13                                     Efficient and Robust Emergence of Norms Through Heuristic Collective Learning
-## 14                                    Reinforcement Learning of Informed Initial Policies for Decentralized Planning
-## 15                     Prediction-Based Multi-Agent Reinforcement Learning in Inherently Non-Stationary Environments
-## 16                                        A Reinforcement Learning Approach for Interdomain Routing with Link Prices
-## 17                                                                    Machine Learning in Disruption-tolerant MANETs
-## 18                                                      Mobilized ad-hoc networks: a reinforcement learning approach
-## 19                                                                          Autonomous smart routing for network QoS
-## 20                                      Decentralized Bayesian Reinforcement Learning for Online Agent Collaboration
-## 21              Modeling Assistant s Autonomy Constraints As a Means for Improving Autonomous Assistant-Agent Design
-## 22               Adaptivity at Every Layer: A Modular Approach for Evolving Societies of Learning Autonomous Systems
-## 23               Bayesian Interaction Shaping: Learning to Influence Strategic Interactions in Mixed Robotic Domains
-## 24                                 Resource Abstraction for Reinforcement Learning in Multiagent Congestion Problems
-## 25                                    Multiagent Reinforcement Learning and Self-organization in a Network of Agents
-## 26                                                                  Batch Reinforcement Learning in a Complex Domain
-## 27                                                             Co-evolution of Agent Strategies in N-player Dilemmas
-## 28                                                                Self-organisation in an Agent Network via Learning
-## 29                                           Self-organization for Coordinating Decentralized Reinforcement Learning
-## 30                                                        Adjustable Autonomy in Real-world Multi-agent Environments
-## 31                         How Autonomy Oriented Computing (AOC) Tackles a Computationally Hard Optimization Problem
-## 32                                                               A Bartering Approach to Improve Multiagent Learning
-## 33                                                 Learning Sequences of Actions in Collectives of Autonomous Agents
-## 34                                                        Learning and Decision: Making for Intention Reconciliation
-## 35                    Continuous Collaboration: A Case Study on the Development of an Adaptive Cyber-physical System
-## 36                                               RPLLEARN: Extending an Autonomous Robot Control Language to Perform
-## 37                         Coordination Through Mutual Notification in Cooperative Multiagent Reinforcement Learning
-## 38                                                          On Topic Selection Strategies in Multi-agent Naming Game
-## 39                                         Inter-institutional Social Capital for Self-Organising Nested Enterprises
-## 40   Dealing with Unforeseen Situations in the Context of Self-Adaptive Urban Traffic Control: How to Bridge the Gap
-## 41                                              Decentralised Progressive Signal Systems for Organic Traffic Control
-## 42                                                                                Learning in Open Adaptive Networks
-## 43                          A Machine Learning Approach to Performance Prediction of Total Order Broadcast Protocols
-## 44                                                    Self-Adaptive Dissemination of Data in Dynamic Sensor Networks
-## 45                                 Autonomic Multi-policy Optimization in Pervasive Systems: Overview and Evaluation
-## 46                           Self-Organising Zooms for Decentralised Redundancy Management in Visual Sensor Networks
-## 47                         Towards Data-centric Control of Sensor Networks through Bayesian Dynamic Linear Modelling
-## 48                                   Firefly-Inspired Synchronization for Improved Dynamic Pricing in Online Markets
-## 49                                               Decentralized Approaches for Self-adaptation in Agent Organizations
-## 50                                    Static Dynamic and Adaptive Heterogeneity in Distributed Smart Camera Networks
-## 51                                                               Distributed Cooperation in Wireless Sensor Networks
-## 52                                   Prosumers as Aggregators in the DEZENT Context of Regenerative Power Production
-## 53                                                   Goal-Aware Team Affiliation in Collectives of Autonomous Robots
-## 54                                              Decentralized Collective Learning for Self-Managed Sharing Economies
-## 55                                       Constructivist Approach to State Space Adaptation in Reinforcement Learning
-## 56                         TSLAM: A Trust-Enabled Self-Learning Agent Model for Service Matching in the Cloud Market
-## 57                            Autonomous Management of Energy-Harvesting IoT Nodes Using Deep Reinforcement Learning
-## 58                                                                 Reinforcement Learning for Cooperative Overtaking
-## 59                                       New quantum-genetic based OLSR protocol (QG-OLSR) for Mobile Ad hoc Network
-##                     Application Domain Emergent Behaviour
-## 1                                  CPS                 No
-## 2                              Traffic                 No
-## 3                              Network                Yes
-## 4                              Network                Yes
-## 5                                Other                Yes
-## 6                                Other                 No
-## 7                                  CPS                Yes
-## 8                                Other                 No
-## 9                                  CPS                Yes
-## 10                               Other                 No
-## 11                                 CPS                 No
-## 12                    Cooperative Game                 No
-## 13                    Cooperative Game                 No
-## 14                                 CPS                 No
-## 15                                 CPS                Yes
-## 16                             Network                Yes
-## 17                             Network                 No
-## 18                             Network                 No
-## 19                             Network                 No
-## 20                                 CPS                 No
-## 21                              Market                 No
-## 22                                 CPS                 No
-## 23                                 CPS                 No
-## 24                             Traffic                Yes
-## 25 Distributed Task Allocation Problem                 No
-## 26                                 CPS                 No
-## 27                    Cooperative Game                Yes
-## 28 Distributed Task Allocation Problem                 No
-## 29 Distributed Task Allocation Problem                Yes
-## 30                               Other                 No
-## 31                    Cooperative Game                 No
-## 32                               Other                 No
-## 33                                 CPS                Yes
-## 34                              Market                 No
-## 35                                 CPS                 No
-## 36                                 CPS                 No
-## 37                                 CPS                 No
-## 38                    Cooperative Game                Yes
-## 39                                 CPS                Yes
-## 40                             Traffic                 No
-## 41                             Traffic                 No
-## 42 Distributed Task Allocation Problem                Yes
-## 43                             Network                 No
-## 44                             Network                Yes
-## 45                             Traffic                 No
-## 46                                 CPS                 No
-## 47                                 CPS                Yes
-## 48                              Market                 No
-## 49                               Other                 No
-## 50                                 CPS                 No
-## 51                                 CPS                 No
-## 52                                 CPS                Yes
-## 53                                 CPS                Yes
-## 54                                 CPS                Yes
-## 55                             Traffic                 No
-## 56                              Market                 No
-## 57                                 CPS                Yes
-## 58                             Traffic                Yes
-## 59                             Network                 No
-##    Cooperative (agent level)                           Selfishness
-## 1                        Yes             Selfish but collaborative
-## 2                        Yes Altruistic locally / Selfish globally
-## 3                         No                               Selfish
-## 4                         No                               Selfish
-## 5                         No                               Selfish
-## 6                        Yes                            Altruistic
-## 7                         No                               Selfish
-## 8                        Yes             Selfish but collaborative
-## 9                         No                               Selfish
-## 10                        No                               Selfish
-## 11                        No                Both versions explored
-## 12                        No                Both versions explored
-## 13                        No                            Altruistic
-## 14                        No                               Selfish
-## 15                        No                               Selfish
-## 16                        No                               Selfish
-## 17                       Yes            Altruistic (collaborative)
-## 18                       Yes            Altruistic (collaborative)
-## 19                       Yes            Altruistic (collaborative)
-## 20                       Yes            Altruistic (collaborative)
-## 21                       Yes                               Selfish
-## 22                       Yes            Altruistic (collaborative)
-## 23                        No Altruistic locally / Selfish globally
-## 24                        No                               Selfish
-## 25                       Yes             Selfish but collaborative
-## 26                       Yes             Selfish but collaborative
-## 27                        No                               Selfish
-## 28                       Yes             Selfish but collaborative
-## 29                        No                               Selfish
-## 30                       Yes                            Altruistic
-## 31                       Yes                            Altruistic
-## 32                       Yes                               Selfish
-## 33                        No                               Selfish
-## 34                       Yes                               Selfish
-## 35                       Yes            Altruistic (collaborative)
-## 36                        No                               Selfish
-## 37                        No                            Altruistic
-## 38                        No                               Selfish
-## 39                       Yes                               Selfish
-## 40                        No Altruistic locally / Selfish globally
-## 41                       Yes            Altruistic (collaborative)
-## 42                        No                               Selfish
-## 43                        No                               Selfish
-## 44                        No                               Selfish
-## 45                       Yes                            Altruistic
-## 46                       Yes                            Altruistic
-## 47                        No                               Selfish
-## 48                       Yes             Selfish but collaborative
-## 49                       Yes             Selfish but collaborative
-## 50                       Yes             Selfish but collaborative
-## 51                       Yes             Selfish but collaborative
-## 52                        No                               Selfish
-## 53                       Yes                            Altruistic
-## 54                       Yes                               Tunable
-## 55                        No                               Selfish
-## 56                       Yes                               Selfish
-## 57                        No                               Selfish
-## 58                       Yes                            Altruistic
-## 59                        No                            Altruistic
-##               Autonomy Knowledge Access               Trigger - first
-## 1  Restricted Autonomy     Neighborhood No initial knowledge (random)
-## 2        Full Autonomy     Neighborhood No initial knowledge (random)
-## 3        Full Autonomy          Minimal   From peers and other agents
-## 4        Full Autonomy          Limited No initial knowledge (random)
-## 5        Full Autonomy          Minimal   From peers and other agents
-## 6        Full Autonomy          Limited No initial knowledge (random)
-## 7        Full Autonomy          Maximal No initial knowledge (random)
-## 8        Full Autonomy          Limited No initial knowledge (random)
-## 9        Full Autonomy     Neighborhood No initial knowledge (random)
-## 10       Full Autonomy          Maximal No initial knowledge (random)
-## 11       Full Autonomy          Tunable     Domain knowledge / humans
-## 12       Full Autonomy     Neighborhood No initial knowledge (random)
-## 13       Full Autonomy     Neighborhood No initial knowledge (random)
-## 14       Full Autonomy          Minimal   From peers and other agents
-## 15       Full Autonomy          Minimal     Domain knowledge / humans
-## 16       Full Autonomy          Minimal No initial knowledge (random)
-## 17       Full Autonomy     Neighborhood No initial knowledge (random)
-## 18       Full Autonomy     Neighborhood No initial knowledge (random)
-## 19       Full Autonomy     Neighborhood No initial knowledge (random)
-## 20       Full Autonomy     Neighborhood No initial knowledge (random)
-## 21       Full Autonomy          Minimal                 Not mentioned
-## 22       Full Autonomy          Minimal                 Not mentioned
-## 23       Full Autonomy          Limited     Domain knowledge / humans
-## 24       Full Autonomy          Minimal No initial knowledge (random)
-## 25       Full Autonomy          Minimal No initial knowledge (random)
-## 26       Full Autonomy          Maximal     Domain knowledge / humans
-## 27       Full Autonomy     Neighborhood No initial knowledge (random)
-## 28       Full Autonomy     Neighborhood No initial knowledge (random)
-## 29       Full Autonomy          Tunable No initial knowledge (random)
-## 30 Restricted Autonomy          Maximal     Domain knowledge / humans
-## 31       Full Autonomy          Maximal     Domain knowledge / humans
-## 32       Full Autonomy          Maximal     Domain knowledge / humans
-## 33       Full Autonomy          Minimal No initial knowledge (random)
-## 34 Restricted Autonomy          Minimal No initial knowledge (random)
-## 35       Full Autonomy          Maximal No initial knowledge (random)
-## 36       Full Autonomy          Minimal No initial knowledge (random)
-## 37       Full Autonomy          Limited No initial knowledge (random)
-## 38       Full Autonomy          Minimal No initial knowledge (random)
-## 39       Full Autonomy          Minimal No initial knowledge (random)
-## 40       Full Autonomy          Minimal No initial knowledge (random)
-## 41       Full Autonomy     Neighborhood                 Not mentioned
-## 42       Full Autonomy          Minimal                 Not mentioned
-## 43       Full Autonomy          Minimal                 Not mentioned
-## 44       Full Autonomy          Limited                 Not mentioned
-## 45 Restricted Autonomy     Neighborhood                 Not mentioned
-## 46 Restricted Autonomy          Limited No initial knowledge (random)
-## 47       Full Autonomy          Minimal No initial knowledge (random)
-## 48       Full Autonomy          Maximal No initial knowledge (random)
-## 49       Full Autonomy     Neighborhood No initial knowledge (random)
-## 50       Full Autonomy     Neighborhood No initial knowledge (random)
-## 51       Full Autonomy     Neighborhood                 Not mentioned
-## 52 Restricted Autonomy          Tunable                 Not mentioned
-## 53       Full Autonomy          Limited No initial knowledge (random)
-## 54       Full Autonomy          Minimal     Domain knowledge / humans
-## 55       Full Autonomy          Minimal     Domain knowledge / humans
-## 56       Full Autonomy          Minimal     Domain knowledge / humans
-## 57       Full Autonomy          Minimal     Domain knowledge / humans
-## 58       Full Autonomy     Neighborhood     Domain knowledge / humans
-## 59       Full Autonomy          Maximal   From peers and other agents
-##                    Trigger - update
-## 1                          Periodic
-## 2                     Not mentioned
-## 3                          Periodic
-## 4                            Action
-## 5                     Not mentioned
-## 6                          Periodic
-## 7                          Periodic
-## 8                          Periodic
-## 9                          Periodic
-## 10                     Task/Episode
-## 11 Learning task threshold achieved
-## 12                     Task/Episode
-## 13                     Task/Episode
-## 14 Learning task threshold achieved
-## 15                         Periodic
-## 16                           Action
-## 17               Social interaction
-## 18               Social interaction
-## 19                           Action
-## 20               Social interaction
-## 21                           Action
-## 22               Social interaction
-## 23                           Action
-## 24                    Not mentioned
-## 25                           Action
-## 26 Learning task threshold achieved
-## 27 Learning task threshold achieved
-## 28                           Action
-## 29                           Action
-## 30                     Task/Episode
-## 31                           Action
-## 32                           Action
-## 33                           Action
-## 34                           Action
-## 35 Learning task threshold achieved
-## 36                     Task/Episode
-## 37                     Task/Episode
-## 38                           Action
-## 39 Learning task threshold achieved
-## 40 Learning task threshold achieved
-## 41 Learning task threshold achieved
-## 42                    Not mentioned
-## 43                    Not mentioned
-## 44                    Not mentioned
-## 45                         Periodic
-## 46                         Periodic
-## 47                         Periodic
-## 48                         Periodic
-## 49                         Periodic
-## 50                     Task/Episode
-## 51                         Periodic
-## 52                         Periodic
-## 53                           Action
-## 54                           Action
-## 55                     Task/Episode
-## 56                         Periodic
-## 57                     Task/Episode
-## 58                         Periodic
-## 59 Learning task threshold achieved
-##                                       Technique
-## 1                                 Probabilistic
-## 2                        Reinforcement Learning
-## 3                        Reinforcement Learning
-## 4                                   Game Theory
-## 5                                    Statistics
-## 6                          Evolutionary Process
-## 7                        Reinforcement Learning
-## 8                        Reinforcement Learning
-## 9                        Reinforcement Learning
-## 10                                Applied Logic
-## 11                          Supervised Learning
-## 12                       Reinforcement Learning
-## 13                                  Game Theory
-## 14                       Reinforcement Learning
-## 15                       Reinforcement Learning
-## 16                       Reinforcement Learning
-## 17                                Probabilistic
-## 18                       Reinforcement Learning
-## 19                       Reinforcement Learning
-## 20                       Reinforcement Learning
-## 21                          Supervised Learning
-## 22                       Reinforcement Learning
-## 23                                Probabilistic
-## 24                       Reinforcement Learning
-## 25                       Reinforcement Learning
-## 26                       Reinforcement Learning
-## 27                                  Game Theory
-## 28                       Reinforcement Learning
-## 29                       Reinforcement Learning
-## 30                       Reinforcement Learning
-## 31                                  Game Theory
-## 32                          Supervised Learning
-## 33                       Reinforcement Learning
-## 34                       Reinforcement Learning
-## 35                       Reinforcement Learning
-## 36                                   Statistics
-## 37                       Reinforcement Learning
-## 38                                  Game Theory
-## 39                          Supervised Learning
-## 40                       Reinforcement Learning
-## 41                       Reinforcement Learning
-## 42                       Reinforcement Learning
-## 43                          Supervised Learning
-## 44                       Reinforcement Learning
-## 45                       Reinforcement Learning
-## 46                       Reinforcement Learning
-## 47                                Probabilistic
-## 48                                 Swarm System
-## 49                       Reinforcement Learning
-## 50                                 Swarm System
-## 51       Game Theory and Reinforcement Learning
-## 52                       Reinforcement Learning
-## 53                       Reinforcement Learning
-## 54                             Gradiend Descend
-## 55                       Reinforcement Learning
-## 56                          Supervised Learning
-## 57                       Reinforcement Learning
-## 58                       Reinforcement Learning
-## 59 Genetic Algorithm and Reinforcement Learning
-```
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> ID </th>
+   <th style="text-align:left;"> Title </th>
+   <th style="text-align:left;"> Application Domain </th>
+   <th style="text-align:left;"> Emergent Behaviour </th>
+   <th style="text-align:left;"> Cooperative (agent level) </th>
+   <th style="text-align:left;"> Selfishness </th>
+   <th style="text-align:left;"> Autonomy </th>
+   <th style="text-align:left;"> Knowledge Access </th>
+   <th style="text-align:left;"> Trigger - first </th>
+   <th style="text-align:left;"> Trigger - update </th>
+   <th style="text-align:left;"> Technique </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Pervasive Self-Learning with Multi-modal Distributed Sensors </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Selfish but collaborative </td>
+   <td style="text-align:left;"> Restricted Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Probabilistic </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Distributed W-Learning: Multi-Policy Optimization in Self-Organizing Systems </td>
+   <td style="text-align:left;"> Traffic </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic locally / Selfish globally </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> Self-organized Fault-tolerant Routing in Peer-to-Peer Overlays </td>
+   <td style="text-align:left;"> Network </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> From peers and other agents </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> Self-organizing Bandwidth Sharing in Priority-Based Medium Access </td>
+   <td style="text-align:left;"> Network </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Limited </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Game Theory </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> Incremental Social Learning Applied to a Decentralized Decision-Making Mechanism: Collective Learning Made Faster </td>
+   <td style="text-align:left;"> Other </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> From peers and other agents </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Statistics </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> Simulating Human Single Motor Units Using Self-Organizing Agents </td>
+   <td style="text-align:left;"> Other </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Limited </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Evolutionary Process </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 7 </td>
+   <td style="text-align:left;"> Learning to be Different: Heterogeneity and Efficiency in Distributed Smart Camera Networks </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Maximal </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 8 </td>
+   <td style="text-align:left;"> Self-Organizational Reciprocal Agents for Conflict Avoidance in Allocation Problems </td>
+   <td style="text-align:left;"> Other </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Selfish but collaborative </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Limited </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:left;"> A Mutual Influence Detection Algorithm for Systems with Local Performance Measurement </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:left;"> Towards Dynamic Epistemic Learning of Actions in Autonomic Multi-agent Systems </td>
+   <td style="text-align:left;"> Other </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Maximal </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Task/Episode </td>
+   <td style="text-align:left;"> Applied Logic </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 11 </td>
+   <td style="text-align:left;"> Cooperative Resource Allocation in Open Systems of Systems </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Both versions explored </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Tunable </td>
+   <td style="text-align:left;"> Domain knowledge / humans </td>
+   <td style="text-align:left;"> Learning task threshold achieved </td>
+   <td style="text-align:left;"> Supervised Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 12 </td>
+   <td style="text-align:left;"> Multiagent Reinforcement Social Learning Toward Coordination in Cooperative Multiagent Systems </td>
+   <td style="text-align:left;"> Cooperative Game </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Both versions explored </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Task/Episode </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 13 </td>
+   <td style="text-align:left;"> Efficient and Robust Emergence of Norms Through Heuristic Collective Learning </td>
+   <td style="text-align:left;"> Cooperative Game </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Altruistic </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Task/Episode </td>
+   <td style="text-align:left;"> Game Theory </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 14 </td>
+   <td style="text-align:left;"> Reinforcement Learning of Informed Initial Policies for Decentralized Planning </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> From peers and other agents </td>
+   <td style="text-align:left;"> Learning task threshold achieved </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:left;"> Prediction-Based Multi-Agent Reinforcement Learning in Inherently Non-Stationary Environments </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> Domain knowledge / humans </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 16 </td>
+   <td style="text-align:left;"> A Reinforcement Learning Approach for Interdomain Routing with Link Prices </td>
+   <td style="text-align:left;"> Network </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 17 </td>
+   <td style="text-align:left;"> Machine Learning in Disruption-tolerant MANETs </td>
+   <td style="text-align:left;"> Network </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic (collaborative) </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Social interaction </td>
+   <td style="text-align:left;"> Probabilistic </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:left;"> Mobilized ad-hoc networks: a reinforcement learning approach </td>
+   <td style="text-align:left;"> Network </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic (collaborative) </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Social interaction </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:left;"> Autonomous smart routing for network QoS </td>
+   <td style="text-align:left;"> Network </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic (collaborative) </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:left;"> Decentralized Bayesian Reinforcement Learning for Online Agent Collaboration </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic (collaborative) </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Social interaction </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 21 </td>
+   <td style="text-align:left;"> Modeling Assistant s Autonomy Constraints As a Means for Improving Autonomous Assistant-Agent Design </td>
+   <td style="text-align:left;"> Market </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Supervised Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 22 </td>
+   <td style="text-align:left;"> Adaptivity at Every Layer: A Modular Approach for Evolving Societies of Learning Autonomous Systems </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic (collaborative) </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Social interaction </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:left;"> Bayesian Interaction Shaping: Learning to Influence Strategic Interactions in Mixed Robotic Domains </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Altruistic locally / Selfish globally </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Limited </td>
+   <td style="text-align:left;"> Domain knowledge / humans </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Probabilistic </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 24 </td>
+   <td style="text-align:left;"> Resource Abstraction for Reinforcement Learning in Multiagent Congestion Problems </td>
+   <td style="text-align:left;"> Traffic </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 25 </td>
+   <td style="text-align:left;"> Multiagent Reinforcement Learning and Self-organization in a Network of Agents </td>
+   <td style="text-align:left;"> Distributed Task Allocation Problem </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Selfish but collaborative </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 26 </td>
+   <td style="text-align:left;"> Batch Reinforcement Learning in a Complex Domain </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Selfish but collaborative </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Maximal </td>
+   <td style="text-align:left;"> Domain knowledge / humans </td>
+   <td style="text-align:left;"> Learning task threshold achieved </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 27 </td>
+   <td style="text-align:left;"> Co-evolution of Agent Strategies in N-player Dilemmas </td>
+   <td style="text-align:left;"> Cooperative Game </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Learning task threshold achieved </td>
+   <td style="text-align:left;"> Game Theory </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 28 </td>
+   <td style="text-align:left;"> Self-organisation in an Agent Network via Learning </td>
+   <td style="text-align:left;"> Distributed Task Allocation Problem </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Selfish but collaborative </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 29 </td>
+   <td style="text-align:left;"> Self-organization for Coordinating Decentralized Reinforcement Learning </td>
+   <td style="text-align:left;"> Distributed Task Allocation Problem </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Tunable </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:left;"> Adjustable Autonomy in Real-world Multi-agent Environments </td>
+   <td style="text-align:left;"> Other </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic </td>
+   <td style="text-align:left;"> Restricted Autonomy </td>
+   <td style="text-align:left;"> Maximal </td>
+   <td style="text-align:left;"> Domain knowledge / humans </td>
+   <td style="text-align:left;"> Task/Episode </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 31 </td>
+   <td style="text-align:left;"> How Autonomy Oriented Computing (AOC) Tackles a Computationally Hard Optimization Problem </td>
+   <td style="text-align:left;"> Cooperative Game </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Maximal </td>
+   <td style="text-align:left;"> Domain knowledge / humans </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Game Theory </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 32 </td>
+   <td style="text-align:left;"> A Bartering Approach to Improve Multiagent Learning </td>
+   <td style="text-align:left;"> Other </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Maximal </td>
+   <td style="text-align:left;"> Domain knowledge / humans </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Supervised Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 33 </td>
+   <td style="text-align:left;"> Learning Sequences of Actions in Collectives of Autonomous Agents </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 34 </td>
+   <td style="text-align:left;"> Learning and Decision: Making for Intention Reconciliation </td>
+   <td style="text-align:left;"> Market </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Restricted Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 35 </td>
+   <td style="text-align:left;"> Continuous Collaboration: A Case Study on the Development of an Adaptive Cyber-physical System </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic (collaborative) </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Maximal </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Learning task threshold achieved </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 36 </td>
+   <td style="text-align:left;"> RPLLEARN: Extending an Autonomous Robot Control Language to Perform </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Task/Episode </td>
+   <td style="text-align:left;"> Statistics </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 37 </td>
+   <td style="text-align:left;"> Coordination Through Mutual Notification in Cooperative Multiagent Reinforcement Learning </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Altruistic </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Limited </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Task/Episode </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 38 </td>
+   <td style="text-align:left;"> On Topic Selection Strategies in Multi-agent Naming Game </td>
+   <td style="text-align:left;"> Cooperative Game </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Game Theory </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 39 </td>
+   <td style="text-align:left;"> Inter-institutional Social Capital for Self-Organising Nested Enterprises </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Learning task threshold achieved </td>
+   <td style="text-align:left;"> Supervised Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 40 </td>
+   <td style="text-align:left;"> Dealing with Unforeseen Situations in the Context of Self-Adaptive Urban Traffic Control: How to Bridge the Gap </td>
+   <td style="text-align:left;"> Traffic </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Altruistic locally / Selfish globally </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Learning task threshold achieved </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 41 </td>
+   <td style="text-align:left;"> Decentralised Progressive Signal Systems for Organic Traffic Control </td>
+   <td style="text-align:left;"> Traffic </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic (collaborative) </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Learning task threshold achieved </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 42 </td>
+   <td style="text-align:left;"> Learning in Open Adaptive Networks </td>
+   <td style="text-align:left;"> Distributed Task Allocation Problem </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 43 </td>
+   <td style="text-align:left;"> A Machine Learning Approach to Performance Prediction of Total Order Broadcast Protocols </td>
+   <td style="text-align:left;"> Network </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Supervised Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 44 </td>
+   <td style="text-align:left;"> Self-Adaptive Dissemination of Data in Dynamic Sensor Networks </td>
+   <td style="text-align:left;"> Network </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Limited </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 45 </td>
+   <td style="text-align:left;"> Autonomic Multi-policy Optimization in Pervasive Systems: Overview and Evaluation </td>
+   <td style="text-align:left;"> Traffic </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic </td>
+   <td style="text-align:left;"> Restricted Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 46 </td>
+   <td style="text-align:left;"> Self-Organising Zooms for Decentralised Redundancy Management in Visual Sensor Networks </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic </td>
+   <td style="text-align:left;"> Restricted Autonomy </td>
+   <td style="text-align:left;"> Limited </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 47 </td>
+   <td style="text-align:left;"> Towards Data-centric Control of Sensor Networks through Bayesian Dynamic Linear Modelling </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Probabilistic </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 48 </td>
+   <td style="text-align:left;"> Firefly-Inspired Synchronization for Improved Dynamic Pricing in Online Markets </td>
+   <td style="text-align:left;"> Market </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Selfish but collaborative </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Maximal </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Swarm System </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 49 </td>
+   <td style="text-align:left;"> Decentralized Approaches for Self-adaptation in Agent Organizations </td>
+   <td style="text-align:left;"> Other </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Selfish but collaborative </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:left;"> Static Dynamic and Adaptive Heterogeneity in Distributed Smart Camera Networks </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Selfish but collaborative </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Task/Episode </td>
+   <td style="text-align:left;"> Swarm System </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 51 </td>
+   <td style="text-align:left;"> Distributed Cooperation in Wireless Sensor Networks </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Selfish but collaborative </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Game Theory and Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 52 </td>
+   <td style="text-align:left;"> Prosumers as Aggregators in the DEZENT Context of Regenerative Power Production </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Restricted Autonomy </td>
+   <td style="text-align:left;"> Tunable </td>
+   <td style="text-align:left;"> Not mentioned </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 53 </td>
+   <td style="text-align:left;"> Goal-Aware Team Affiliation in Collectives of Autonomous Robots </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Limited </td>
+   <td style="text-align:left;"> No initial knowledge (random) </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 54 </td>
+   <td style="text-align:left;"> Decentralized Collective Learning for Self-Managed Sharing Economies </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Tunable </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> Domain knowledge / humans </td>
+   <td style="text-align:left;"> Action </td>
+   <td style="text-align:left;"> Gradiend Descend </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 55 </td>
+   <td style="text-align:left;"> Constructivist Approach to State Space Adaptation in Reinforcement Learning </td>
+   <td style="text-align:left;"> Traffic </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> Domain knowledge / humans </td>
+   <td style="text-align:left;"> Task/Episode </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 56 </td>
+   <td style="text-align:left;"> TSLAM: A Trust-Enabled Self-Learning Agent Model for Service Matching in the Cloud Market </td>
+   <td style="text-align:left;"> Market </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> Domain knowledge / humans </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Supervised Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 57 </td>
+   <td style="text-align:left;"> Autonomous Management of Energy-Harvesting IoT Nodes Using Deep Reinforcement Learning </td>
+   <td style="text-align:left;"> CPS </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Selfish </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Minimal </td>
+   <td style="text-align:left;"> Domain knowledge / humans </td>
+   <td style="text-align:left;"> Task/Episode </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 58 </td>
+   <td style="text-align:left;"> Reinforcement Learning for Cooperative Overtaking </td>
+   <td style="text-align:left;"> Traffic </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Yes </td>
+   <td style="text-align:left;"> Altruistic </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Neighborhood </td>
+   <td style="text-align:left;"> Domain knowledge / humans </td>
+   <td style="text-align:left;"> Periodic </td>
+   <td style="text-align:left;"> Reinforcement Learning </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 59 </td>
+   <td style="text-align:left;"> New quantum-genetic based OLSR protocol (QG-OLSR) for Mobile Ad hoc Network </td>
+   <td style="text-align:left;"> Network </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> No </td>
+   <td style="text-align:left;"> Altruistic </td>
+   <td style="text-align:left;"> Full Autonomy </td>
+   <td style="text-align:left;"> Maximal </td>
+   <td style="text-align:left;"> From peers and other agents </td>
+   <td style="text-align:left;"> Learning task threshold achieved </td>
+   <td style="text-align:left;"> Genetic Algorithm and Reinforcement Learning </td>
+  </tr>
+</tbody>
+</table>
 
 
 # Clustering Analysis
@@ -395,7 +821,7 @@ aggl.clust.c <- hclust(gower.dist, method = "complete")
 plot(aggl.clust.c,cex = 0.7)
 ```
 
-<img src="figure/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" />
+<img src="notebook_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
 
 
 There are two methods allowing establishing evaluation  criteria for the number ofclusters K to adopt: silhouette values and the bootstrap method.
@@ -417,7 +843,7 @@ ggplot(data = data.frame(t(cstats.table(gower.dist, aggl.clust.c, 10))),
                 color = "red", size=1)
 ```
 
-<img src="figure/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" />
+<img src="notebook_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
 
 Silhouette Analysis Bootstrap of Clusters and Visualization:
@@ -454,7 +880,7 @@ dendro.col <- dendro %>%
 circlize_dendrogram(dendro.col)
 ```
 
-<img src="figure/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" style="display: block; margin: auto;" />
+<img src="notebook_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
 
 * 3 CLUSTERS:
 
@@ -488,7 +914,7 @@ set("labels_cex", 1)
 circlize_dendrogram(dendro.col)
 ```
 
-<img src="figure/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" style="display: block; margin: auto;" />
+<img src="notebook_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" />
 
 * 4 CLUSTERS:
 
@@ -522,7 +948,7 @@ dendro.col <- dendro %>%
 circlize_dendrogram(dendro.col)
 ```
 
-<img src="figure/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" style="display: block; margin: auto;" />
+<img src="notebook_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" />
 
 * 9 CLUSTERS:
 
@@ -556,4 +982,4 @@ dendro.col <- dendro %>%
 circlize_dendrogram(dendro.col)
 ```
 
-<img src="figure/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" style="display: block; margin: auto;" />
+<img src="notebook_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
