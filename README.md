@@ -10,8 +10,7 @@
 kable(dataset) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
-<font size="8" face="Courier New" >
-<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;" font-size:80%>
  <thead>
   <tr>
    <th style="text-align:right;"> ID </th>
