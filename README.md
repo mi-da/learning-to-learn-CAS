@@ -1,10 +1,6 @@
 ---
 title: 'Learning to learn in Collective Self-adaptive Systems: Automated Reasoning
   for System Design Patterns'
-output:
-  html_document: 
-    keep_md: yes
-  pdf_document: default
 ---
 
 # Dataset
