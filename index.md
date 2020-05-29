@@ -1,5 +1,7 @@
 # Dataset
 
+<div style="height:300px;overflow:auto;">
+
 <table class="table table-striped table-hover table-condensed" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -786,6 +788,10 @@
   </tr>
 </tbody>
 </table>
+
+
+</div>
+
 
 
 # Clustering Analysis
