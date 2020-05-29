@@ -1,5 +1,6 @@
 theme: jekyll-theme-cayman
 title: Learning to Learn in Collective Self-Adaptive Systems
+markdown: kramdown 
 
 # Dataset
 
