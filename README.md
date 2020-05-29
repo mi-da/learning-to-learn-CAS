@@ -1,9 +1,8 @@
----
-title: 'Learning to learn in Collective Self-adaptive Systems: Automated Reasoning
-  for System Design Patterns'
----
 
-# Dataset
+# Learning to learn in Collective Self-adaptive Systems: Automated Reasoning for System Design Patterns
+
+
+## Dataset
 
 
 
@@ -800,7 +799,7 @@ kable(dataset) %>%
 </table>
 
 
-# Clustering Analysis
+## Clustering Analysis
 
 The notion of similarity between papers refersto similarity between their attributes (see dataset). Since the attributes identified by our classification are categorical, we adopt the Gower Distance measure.
 
