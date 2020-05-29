@@ -1,12 +1,5 @@
 # Dataset
 
-
-
-```r
-kable(dataset) %>%
-  kable_styling(full_width = F, font_size = 10, bootstrap_options = c("striped", "hover", "condensed"))
-```
-
 <table class="table table-striped table-hover table-condensed" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
