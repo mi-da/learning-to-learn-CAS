@@ -1,6 +1,6 @@
 # Dataset
 
-<table class="table table-striped table-hover table-condensed" style="font-size: 10px; width: 1000 !important; margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="font-size: 10px; width: 3000 !important; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:right;"> ID </th>
