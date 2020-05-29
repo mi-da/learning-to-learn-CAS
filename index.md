@@ -1,6 +1,6 @@
 # Dataset
 
-<div style="height:300px;overflow:auto;">
+<div style="height:300px">
 
 <table class="table table-striped table-hover table-condensed" style="font-size: 10px; margin-left: auto; margin-right: auto;">
  <thead>
