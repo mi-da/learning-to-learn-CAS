@@ -2,15 +2,16 @@
 # Learning to learn in Collective Self-adaptive Systems: Automated Reasoning for System Design Patterns
 
 
-## Dataset
+# Dataset
 
 
 
 ```r
 kable(dataset) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+  kable_styling(full_width = F, font_size = 10, bootstrap_options = c("striped", "hover", "condensed"))
 ```
-<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;" font-size:80%>
+
+<table class="table table-striped table-hover table-condensed" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
    <th style="text-align:right;"> ID </th>
@@ -798,7 +799,7 @@ kable(dataset) %>%
 </table>
 
 
-## Clustering Analysis
+# Clustering Analysis
 
 The notion of similarity between papers refersto similarity between their attributes (see dataset). Since the attributes identified by our classification are categorical, we adopt the Gower Distance measure.
 
@@ -977,3 +978,4 @@ circlize_dendrogram(dendro.col)
 ```
 
 <img src="notebook_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+
