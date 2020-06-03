@@ -1,5 +1,10 @@
 # Dataset
 
+```r
+kable(dataset) %>%
+  kable_styling(full_width = F, font_size = 10, bootstrap_options = c("striped", "hover", "condensed"))
+```
+
 <table class="table table-striped table-hover table-condensed" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
@@ -8,7 +13,7 @@
    <th style="text-align:left;"> Application Domain </th>
    <th style="text-align:left;"> Emergent Behaviour </th>
    <th style="text-align:left;"> Cooperative (agent level) </th>
-   <th style="text-align:left;"> Selfishness </th>
+   <th style="text-align:left;"> Behaviour </th>
    <th style="text-align:left;"> Autonomy </th>
    <th style="text-align:left;"> Knowledge Access </th>
    <th style="text-align:left;"> Trigger - first </th>
@@ -787,6 +792,12 @@
 </tbody>
 </table>
 
+The following packages has been used for the analysis
+
+```
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(pacman, rio, tidyverse, cluster, fpc, ggplot2, reshape2, purrr, dplyr, dendextend, PCAmixdata, klaR, factoextra, bootcluster, kmed, FactoMineR, factoextra, corrplot,ExPosition,ape,circlize, kableExtra, knitr) 
+```
 
 # Clustering Analysis
 
@@ -967,3 +978,470 @@ circlize_dendrogram(dendro.col)
 ```
 
 <img src="notebook_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
+
+We visualize how the attributes are represented by the clustering
+
+
+```r
+colors_to_use <- as.numeric(xOrig$`Autonomy`)
+colors_to_use <- colors_to_use[order.dendrogram(dendro)]
+labels_colors(dendro) <- colors_to_use
+dendro.list<-as.character(xOrig$`Autonomy`)
+
+circlize_dendrogram(dendro)
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
+
+
+
+```r
+colors_to_use <- as.numeric(x$`Emergent Behaviour`)
+colors_to_use <- colors_to_use[order.dendrogram(dendro)]
+labels_colors(dendro) <- colors_to_use
+dendro.list<-as.character(x$`Emergent Behaviour`)
+
+circlize_dendrogram(dendro)
+par(mar=c(0,25,0,0),xpd=TRUE)
+legend(-1.7,1, 
+       legend = c("No Emergent Behaviour","Emergent Behaviour" ), 
+       col = c(1,2), 
+       pch = c(20,20), bty = "n",  pt.cex = 1, cex = 0.7,
+       text.col = "black", horiz = FALSE)
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-14-1.png" style="display: block; margin: auto;" />
+
+
+```r
+colors_to_use <- as.numeric(x$`Cooperative(agent level)`)
+colors_to_use <- colors_to_use[order.dendrogram(dendro)]
+labels_colors(dendro) <- colors_to_use
+dendro.list<-as.character(x$`Cooperative(agent level)`)
+
+circlize_dendrogram(dendro) 
+par(mar=c(0,25,0,0),xpd=TRUE)
+legend(-1.7,1, 
+       legend = c("Non cooperative agent","Cooperative agent"), 
+       col = c(1,2), 
+       pch = c(20,20), bty = "n",  pt.cex = 1, cex = 0.7, 
+       text.col = "black", horiz = FALSE)
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
+
+
+```r
+colors_to_use <- as.numeric(x$Behaviour)
+colors_to_use <- colors_to_use[order.dendrogram(dendro)]
+labels_colors(dendro) <- colors_to_use
+dendro.list<-as.character(x$Behaviour)
+
+circlize_dendrogram(dendro)
+par(mar=c(0,25,0,0),xpd=NA)
+legend(-1.7,1, 
+       legend = c("Altruistic" , "Altruistic (collaborative)", "Altruistic locally/Selfish globally","Both versions explored","Selfish","Selfish but collaborative"), 
+       col = c(1,2,3,4,5,6), 
+       pch = c(20,20,20,20,20,20), bty = "n",  pt.cex = 1, cex = 0.7, 
+       text.col = "black", horiz = FALSE)
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-16-1.png" style="display: block; margin: auto;" />
+
+
+```r
+colors_to_use <- as.numeric(x$`Knowledge Access`)
+colors_to_use <- colors_to_use[order.dendrogram(dendro)]
+labels_colors(dendro) <- colors_to_use
+dendro.list<-as.character(x$`Knowledge Access`)
+
+circlize_dendrogram(dendro)
+par(mar=c(0,25,0,0),xpd=NA)
+legend(-1.7,1, 
+       legend = c("Limited","Maximal","Minimal", "Neighborhood", "Tunable"), 
+       col = c(1,2,3,4,5,6), 
+       pch = c(20,20,20,20,20), bty = "n",  pt.cex = 1, cex = 0.7,
+       text.col = "black", horiz = FALSE)
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-17-1.png" style="display: block; margin: auto;" />
+
+
+```r
+colors_to_use <- as.numeric(x$`Trigger-first`)
+colors_to_use <- colors_to_use[order.dendrogram(dendro)]
+labels_colors(dendro) <- colors_to_use
+dendro.list<-as.character(x$`Trigger-first`)
+
+circlize_dendrogram(dendro)
+par(mar=c(0,25,0,0),xpd=NA)
+legend(-1.7,1,
+       legend = c("Domain knowledge/humans","From peers and other agents","No initial knowledge (random)","Not mentrioned"), 
+       col = c(1,2,3,4,5,6), 
+       pch = c(20,20,20,20,20), bty = "n",  pt.cex = 1, cex = 0.7,
+       text.col = "black", horiz = FALSE)
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-18-1.png" style="display: block; margin: auto;" />
+
+
+```r
+colors_to_use <- as.numeric(x$`Trigger-update`)
+colors_to_use <- colors_to_use[order.dendrogram(dendro)]
+labels_colors(dendro) <- colors_to_use
+dendro.list<-as.character(x$`Trigger-update`)
+
+circlize_dendrogram(dendro)
+par(mar=c(0,25,0,0),xpd=NA)
+legend(-1.7,1,
+       legend = c("Action","Learning task\nthreshold achieved","Not mentioned","Periodic","Social interaction","Task/Episode"), 
+       col = c(1,2,3,4,5,6), 
+       pch = c(20,20,20,20,20,20), bty = "n",  pt.cex = 1, cex = 0.7,
+       text.col = "black", horiz = FALSE)
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
+
+
+```r
+colors_to_use <- as.numeric(x$`Technique`)
+colors_to_use <- colors_to_use[order.dendrogram(dendro)]
+labels_colors(dendro) <- c(8,6,"#E7B800","#E7B800","#E7B800",8,8,8,8,2,8,8,8,8,8,8,8,"darkgreen",7,"darkgreen","#E7B800",8,3,8,8,8,7,8,4,8,8,8,8,8,"purple","#E7B800",8,8,3,3,3,8,8,8,8,8,7,8,8,8,8,5,1,"purple",8,8,3,"#E7B800",7)
+dendro.list<-as.character(x$`Technique`)
+
+circlize_dendrogram(dendro)
+par(mar=c(0,25,0,0),xpd=NA)
+legend(-1.7,1,
+       legend =c("Applied Logic","Evolutionary Process","Game Theory","Game Theory and RL","Genetic Algorithm and RL","Gradient Descent","Probabilistic","Reinforcement Learning","Statistics","Supervised Learning","Swarm System"), 
+       col = c(1,2,3,4,5,6,7,8,"purple","#E7B800","darkgreen"), 
+       pch = c(20,20,20,20,20,20,20,20,20,20,20), bty = "n",  pt.cex = 1, cex = 0.7,
+       text.col = "black", horiz = FALSE)
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-20-1.png" style="display: block; margin: auto;" />
+
+
+```r
+colors_to_use <- as.numeric(x$`Application Domain`)
+colors_to_use <- colors_to_use[order.dendrogram(dendro)]
+labels_colors(dend) <- colors_to_use
+dendro.list<-as.character(x$`Application Domain`)
+
+circlize_dendrogram(dendro)
+par(mar=c(0,25,0,0),xpd=NA)
+legend(-1.7,1,
+       legend = c("Cooperative Game","CPS","Distributed Task\nAllocation Problem","Market","Network","Other","Traffic"),
+       col = c(1,2,3,4,5,6,7), 
+       pch = c(20,20,20,20,20,20,20), bty = "n",  pt.cex = 1, cex = 0.7,
+       text.col = "black", horiz = FALSE)
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-21-1.png" style="display: block; margin: auto;" />
+
+# Multiple Correspondence Analysis
+
+MCA identifies new latent dimensions, which are a combination of the original dimensions and hence can explain information not directly observable. We perform MCA to capture interaction between attributes with the aim of validating and further extending the cluster analysis.
+
+MCA derives for each identified dimension: (i) the relative eigenvalue and, (ii) the identified proportion of variance retained (i.e., the amount of variation accounted for by the corresponding principal dimension).
+
+We report the results obtained with the optimistic Benzécri correction
+
+
+```r
+# Benzécri + Greenacre adjustment	
+mca.res.bg <- epMCA(x, graphs = FALSE, correction = c("b","g"))
+eig.val <- get_eigenvalue(res.mca)
+kable(eig.val) %>%
+  kable_styling(full_width = F, font_size = 10, bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+<table class="table table-striped table-hover table-condensed" style="font-size: 10px; width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:right;"> eigenvalue </th>
+   <th style="text-align:right;"> variance.percent </th>
+   <th style="text-align:right;"> cumulative.variance.percent </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Dim.1 </td>
+   <td style="text-align:right;"> 0.1016633 </td>
+   <td style="text-align:right;"> 32.0966572 </td>
+   <td style="text-align:right;"> 32.09666 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dim.2 </td>
+   <td style="text-align:right;"> 0.0477599 </td>
+   <td style="text-align:right;"> 15.0785324 </td>
+   <td style="text-align:right;"> 47.17519 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dim.3 </td>
+   <td style="text-align:right;"> 0.0435705 </td>
+   <td style="text-align:right;"> 13.7558631 </td>
+   <td style="text-align:right;"> 60.93105 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dim.4 </td>
+   <td style="text-align:right;"> 0.0302412 </td>
+   <td style="text-align:right;"> 9.5476127 </td>
+   <td style="text-align:right;"> 70.47867 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dim.5 </td>
+   <td style="text-align:right;"> 0.0237786 </td>
+   <td style="text-align:right;"> 7.5072644 </td>
+   <td style="text-align:right;"> 77.98593 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dim.6 </td>
+   <td style="text-align:right;"> 0.0213798 </td>
+   <td style="text-align:right;"> 6.7499243 </td>
+   <td style="text-align:right;"> 84.73585 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dim.7 </td>
+   <td style="text-align:right;"> 0.0131710 </td>
+   <td style="text-align:right;"> 4.1583027 </td>
+   <td style="text-align:right;"> 88.89416 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dim.8 </td>
+   <td style="text-align:right;"> 0.0098605 </td>
+   <td style="text-align:right;"> 3.1131107 </td>
+   <td style="text-align:right;"> 92.00727 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dim.9 </td>
+   <td style="text-align:right;"> 0.0082914 </td>
+   <td style="text-align:right;"> 2.6177197 </td>
+   <td style="text-align:right;"> 94.62499 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dim.10 </td>
+   <td style="text-align:right;"> 0.0073535 </td>
+   <td style="text-align:right;"> 2.3216133 </td>
+   <td style="text-align:right;"> 96.94660 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dim.11 </td>
+   <td style="text-align:right;"> 0.0043133 </td>
+   <td style="text-align:right;"> 1.3617619 </td>
+   <td style="text-align:right;"> 98.30836 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dim.12 </td>
+   <td style="text-align:right;"> 0.0036845 </td>
+   <td style="text-align:right;"> 1.1632455 </td>
+   <td style="text-align:right;"> 99.47161 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dim.13 </td>
+   <td style="text-align:right;"> 0.0009755 </td>
+   <td style="text-align:right;"> 0.3079905 </td>
+   <td style="text-align:right;"> 99.77960 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dim.14 </td>
+   <td style="text-align:right;"> 0.0006243 </td>
+   <td style="text-align:right;"> 0.1970954 </td>
+   <td style="text-align:right;"> 99.97669 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Dim.15 </td>
+   <td style="text-align:right;"> 0.0000738 </td>
+   <td style="text-align:right;"> 0.0233061 </td>
+   <td style="text-align:right;"> 100.00000 </td>
+  </tr>
+</tbody>
+</table>
+
+To interpret the results of MCA it is necessary to choose the number of dimensions to retain. We decided, according to the average rule introduced by Lorenzo-Seva et. al.~\cite{Lorenzo-Seva:2011}, to keep all the dimensions whose variance is greater than $9\%$. Hence, we keep 4 dimensions.
+
+
+Contributions of the attributes to PC1 (principal component one)
+
+
+```r
+fviz_contrib(res.mca, choice="var", axes = 1, top =15,
+             fill = "lightgray", color = "black") +
+  theme_minimal() +
+  labs(title = "", x = "") +
+  theme(text = element_text(size=10), axis.text.x = element_text(angle=70, vjust=1, hjust=1))
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-23-1.png" style="display: block; margin: auto;" />
+
+Contributions of the attributes to PC2
+
+
+```r
+fviz_contrib(res.mca, choice="var", axes = 2, top =15,
+             fill = "lightgray", color = "black") +
+  theme_minimal() +
+  labs(title = "", x = "") +
+  theme(text = element_text(size=10), axis.text.x = element_text(angle=77, vjust=1, hjust=1))
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-24-1.png" style="display: block; margin: auto;" />
+
+
+Contributions of the attributes to PC3
+
+
+```r
+fviz_contrib(res.mca, choice="var", axes = 3, top =15,
+             fill = "lightgray", color = "black") +
+  theme_minimal() +
+  labs(title = "", x = "") +
+  theme(text = element_text(size=10), axis.text.x = element_text(angle=77, vjust=1, hjust=1))
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-25-1.png" style="display: block; margin: auto;" />
+
+Contributions of the attributes to PC4
+
+
+```r
+fviz_contrib(res.mca, choice="var", axes = 4, top =15,
+             fill = "lightgray", color = "black") +
+  theme_minimal() +
+  labs(title = "", x = "") +
+  theme(text = element_text(size=10), axis.text.x = element_text(angle=77, vjust=1, hjust=1))
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
+
+We show the biplots:
+
+
+
+```r
+fviz_mca_ind(res.mca,
+             legend.title = "Emergent Behaviour",
+             pointsize = 1.2,
+             labelsize = 3,
+             habillage = x$`Emergent Behaviour`,
+             palette = c("#FC4E07","#00AFBB", "#E7B800", "#FC4E07"),
+             addEllipses = TRUE, 
+             ellipse.level = 0.95,
+             axes = c(1, 2)
+             ) + labs(title = "", x = "Dim.1", y ="Dim.2")
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-27-1.png" style="display: block; margin: auto;" />
+
+
+```r
+fviz_mca_ind(res.mca,
+             legend.title = "Cooperative (agent level)",
+             pointsize = 1.2,
+             labelsize = 3,
+             habillage = data$`Cooperative (agent level)`, 
+             palette = c("#FC4E07","#00AFBB", "#E7B800", "#FC4E07"),
+             addEllipses = TRUE,
+             ellipse.level = 0.95,
+             axes = c(1, 2)
+) + labs(title = "", x = "Dim.1", y ="Dim.2")
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
+
+
+```r
+fviz_mca_ind(res.mca,
+             legend.title = "Behaviour",
+             pointsize = 1.2,
+             labelsize = 3,
+             habillage = data$`Behaviour`,
+             palette = c("#2fc437","#00AFBB","#E7B800","#FC4E07","#e633ff","#FF8000","#8000FF","#0080FF","#FF0080"),
+             addEllipses = TRUE, # Concentration ellipses
+             ellipse.level = 0.8,
+             axes = c(1,2)
+) + labs(title = "", x = "Dim.1", y ="Dim.2")
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-29-1.png" style="display: block; margin: auto;" />
+
+
+```r
+fviz_mca_ind(res.mca,
+             legend.title = "Trigger - first",
+             pointsize = 1.2,
+             labelsize = 3,
+             habillage = data$`Trigger - first`,
+             palette = c("#2fc437","#00AFBB","#E7B800","#FC4E07","#e633ff","#FF8000","#8000FF","#0080FF","#FF0080"),
+             addEllipses = TRUE, # Concentration ellipses
+             ellipse.level = 0.6,
+             axes = c(2,3),
+) + labs(title = "", x = "Dim.2", y ="Dim.3")
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-30-1.png" style="display: block; margin: auto;" />
+
+
+```r
+fviz_mca_ind(res.mca,
+             legend.title = "Trigger - update",
+             pointsize = 1.2,
+             labelsize = 3,
+             habillage = data$`Trigger - update`, # color by groups
+             palette = c("#2fc437","#00AFBB","#E7B800","#FC4E07","#e633ff","#FF8000","#8000FF","#0080FF","#FF0080"),
+             addEllipses = TRUE, # Concentration ellipses
+             ellipse.level = 0.6,
+             axes = c(2,3)
+) + labs(title = "", x = "Dim.2", y ="Dim.3")
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-31-1.png" style="display: block; margin: auto;" />
+
+
+```r
+fviz_mca_ind(res.mca,
+             legend.title = "Knowledge Access",
+             pointsize = 1.2,
+             labelsize = 3,
+             habillage = data$`Knowledge Access`, 
+             palette = c("#2fc437","#00AFBB","#E7B800","#FC4E07","#e633ff","#FF8000","#8000FF","#0080FF","#FF0080"),
+             addEllipses = TRUE, # Concentration ellipses
+             ellipse.level = 0.6,
+             axes = c(2,3)
+) + labs(title = "", x = "Dim.2", y ="Dim.3")
+```
+
+
+<img src="notebook_files/figure-html/unnamed-chunk-32-1.png" style="display: block; margin: auto;" />
+
+
+
+```r
+fviz_mca_ind(res.mca,
+             legend.title = "Technique",
+             pointsize = 1.2,
+             labelsize = 3,
+             habillage = data$`Technique`,
+             addEllipses = TRUE,
+             ellipse.level = 0.5,
+             axes = c(3,4)
+) + labs(title = "", x = "Dim.3", y ="Dim.4")
+```
+
+
+<img src="notebook_files/figure-html/unnamed-chunk-33-1.png" style="display: block; margin: auto;" />
+
+
+```r
+fviz_mca_ind(res.mca,
+             legend.title = "Technique",
+             pointsize = 1.2,
+             labelsize = 3,
+             habillage = data$`Application Domain`, # color by groups
+             addEllipses = TRUE, # Concentration ellipses
+             ellipse.level = 0.6,
+             axes = c(3,4)
+) + labs(title = "", x = "Dim.3", y ="Dim.4") 
+```
+
+<img src="notebook_files/figure-html/unnamed-chunk-34-1.png" style="display: block; margin: auto;" />
