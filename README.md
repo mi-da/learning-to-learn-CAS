@@ -1,4 +1,4 @@
-#Learning to learn in Collective Self-adaptive Systems: Automated Reasoning for System Design Patterns
+# Learning to learn in Collective Self-adaptive Systems: Automated Reasoning for System Design Patterns
 
 This page contains the data to replicate the results of the paper "Learning to learn in Collective Self-adaptive Systems: Automated Reasoning for System Design Patterns" (under revision at eCAS2020).
 
