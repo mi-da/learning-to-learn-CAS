@@ -11,15 +11,6 @@ pacman::p_load(pacman, rio, tidyverse, cluster, fpc, ggplot2, reshape2, purrr, d
 
 To visualize the dataset:
 
----
-title: 'Learning to learn in Collective Self-adaptive Systems: Automated Reasoning
-  for System Design Patterns'
-output:
-  html_document: 
-    keep_md: yes
-  pdf_document: default
----
-
 ```r
 kable(dataset) %>%
   kable_styling(full_width = F, font_size = 10, bootstrap_options = c("striped", "hover", "condensed"))
@@ -812,7 +803,7 @@ kable(dataset) %>%
 </tbody>
 </table>
 
-The following packages has been used for the analysis
+The following packages has been used for the analysis:
 
 ```
 if (!require("pacman")) install.packages("pacman")
@@ -839,7 +830,7 @@ plot(aggl.clust.c,cex = 0.7)
 <img src="notebook_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" />
 
 
-There are two methods allowing establishing evaluation  criteria for the number ofclusters K to adopt: silhouette values and the bootstrap method.
+There are two methods allowing establishing evaluation  criteria for the number ofclusters K: silhouette values and the bootstrap method.
 
 Silhouette Analysis:
 
@@ -861,7 +852,7 @@ ggplot(data = data.frame(t(cstats.table(gower.dist, aggl.clust.c, 10))),
 <img src="notebook_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" />
 
 
-Silhouette Analysis Bootstrap of Clusters and Visualization:
+Bootstrap of Clusters and Visualization:
 
 * 2 CLUSTERS:
 
@@ -999,7 +990,7 @@ circlize_dendrogram(dendro.col)
 
 <img src="notebook_files/figure-html/unnamed-chunk-15-1.png" style="display: block; margin: auto;" />
 
-We visualize how the attributes are represented by the clustering
+We visualize how the attributes are represented by the clustering:
 
 
 ```r
@@ -1164,7 +1155,7 @@ MCA identifies new latent dimensions, which are a combination of the original di
 
 MCA derives for each identified dimension: (i) the relative eigenvalue and, (ii) the identified proportion of variance retained (i.e., the amount of variation accounted for by the corresponding principal dimension).
 
-We report the results obtained with the optimistic Benzécri correction
+We report the results obtained with the optimistic Benzécri correction.
 
 
 ```r
@@ -1278,10 +1269,10 @@ kable(eig.val) %>%
 </tbody>
 </table>
 
-To interpret the results of MCA it is necessary to choose the number of dimensions to retain. We decided, according to the average rule introduced by Lorenzo-Seva et. al.~\cite{Lorenzo-Seva:2011}, to keep all the dimensions whose variance is greater than 9%. Hence, we keep 4 dimensions.
+To interpret the results of MCA it is necessary to choose the number of dimensions to retain. We decided, according to the average rule introduced by Lorenzo-Seva et. al., to keep all the dimensions whose variance is greater than 9%. Hence, we keep 4 dimensions.
 
 
-Contributions of the attributes to PC1 (principal component one)
+Contributions of the attributes to PC1 (principal component one):
 
 
 ```r
@@ -1294,7 +1285,7 @@ fviz_contrib(res.mca, choice="var", axes = 1, top =15,
 
 <img src="notebook_files/figure-html/unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
 
-Contributions of the attributes to PC2
+Contributions of the attributes to PC2:
 
 
 ```r
@@ -1308,7 +1299,7 @@ fviz_contrib(res.mca, choice="var", axes = 2, top =15,
 <img src="notebook_files/figure-html/unnamed-chunk-27-1.png" style="display: block; margin: auto;" />
 
 
-Contributions of the attributes to PC3
+Contributions of the attributes to PC3:
 
 
 ```r
@@ -1321,7 +1312,7 @@ fviz_contrib(res.mca, choice="var", axes = 3, top =15,
 
 <img src="notebook_files/figure-html/unnamed-chunk-28-1.png" style="display: block; margin: auto;" />
 
-Contributions of the attributes to PC4
+Contributions of the attributes to PC4:
 
 
 ```r
