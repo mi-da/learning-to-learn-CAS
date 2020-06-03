@@ -1,4 +1,15 @@
+This page contains the R scripts to replicate the results of the paper "Learning to learn in Collective Self-adaptive Systems: Automated Reasoning for System Design Patterns" (under revision at eCAS2020).
+
+The following packages has been used for the analysis:
+
+```
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(pacman, rio, tidyverse, cluster, fpc, ggplot2, reshape2, purrr, dplyr, dendextend, PCAmixdata, klaR, factoextra, bootcluster, kmed, FactoMineR, factoextra, corrplot,ExPosition,ape,circlize, kableExtra, knitr) 
+```
+
 # Dataset
+
+To visualize the dataset:
 
 ```r
 kable(dataset) %>%
@@ -792,23 +803,16 @@ kable(dataset) %>%
 </tbody>
 </table>
 
-The following packages has been used for the analysis
-
-```
-if (!require("pacman")) install.packages("pacman")
-pacman::p_load(pacman, rio, tidyverse, cluster, fpc, ggplot2, reshape2, purrr, dplyr, dendextend, PCAmixdata, klaR, factoextra, bootcluster, kmed, FactoMineR, factoextra, corrplot,ExPosition,ape,circlize, kableExtra, knitr) 
-```
-
 # Clustering Analysis
 
-The notion of similarity between papers refersto similarity between their attributes (see dataset). Since the attributes identified by our classification are categorical, we adopt the Gower Distance measure.
+The notion of similarity between papers refers to similarity between their attributes (see the dataset). Since the attributes are categorical, we adopt the Gower Distance measure.
 
 
 ```r
 gower.dist <- daisy(x, metric = c("gower"))
 ```
 
-HAC  starts  by  treating  each  observation  (i.e.,paper)  as  a  separate  cluster.  Then,  it  repeatedlyidentifies and merge the two most similar clusters.
+HAC starts by treating each observation (i.e., paper) as a separate cluster. Then, it repeatedly identifies and merge the two most similar clusters.
 
 
 ```r
@@ -819,7 +823,7 @@ plot(aggl.clust.c,cex = 0.7)
 <img src="notebook_files/figure-html/unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
 
 
-There are two methods allowing establishing evaluation  criteria for the number ofclusters K to adopt: silhouette values and the bootstrap method.
+There are two methods allowing establishing evaluation criteria for the number of clusters K: silhouette values and the bootstrap method.
 
 Silhouette Analysis:
 
@@ -841,7 +845,7 @@ ggplot(data = data.frame(t(cstats.table(gower.dist, aggl.clust.c, 10))),
 <img src="notebook_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
 
 
-Silhouette Analysis Bootstrap of Clusters and Visualization:
+Bootstrap of Clusters and Visualization:
 
 * 2 CLUSTERS:
 
@@ -979,8 +983,7 @@ circlize_dendrogram(dendro.col)
 
 <img src="notebook_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" />
 
-We visualize how the attributes are represented by the clustering
-
+We visualize how the attributes are represented by the clustering analysis:
 
 ```r
 colors_to_use <- as.numeric(xOrig$`Autonomy`)
@@ -1141,9 +1144,7 @@ legend(-1.7,1,
 # Multiple Correspondence Analysis
 
 MCA identifies new latent dimensions, which are a combination of the original dimensions and hence can explain information not directly observable. We perform MCA to capture interaction between attributes with the aim of validating and further extending the cluster analysis.
-
 MCA derives for each identified dimension: (i) the relative eigenvalue and, (ii) the identified proportion of variance retained (i.e., the amount of variation accounted for by the corresponding principal dimension).
-
 We report the results obtained with the optimistic Benzécri correction
 
 
@@ -1258,8 +1259,7 @@ kable(eig.val) %>%
 </tbody>
 </table>
 
-To interpret the results of MCA it is necessary to choose the number of dimensions to retain. We decided, according to the average rule introduced by Lorenzo-Seva et. al.~\cite{Lorenzo-Seva:2011}, to keep all the dimensions whose variance is greater than $9\%$. Hence, we keep 4 dimensions.
-
+To interpret the results of MCA it is necessary to choose the number of dimensions to retain. We decided, according to the average rule introduced by Lorenzo-Seva et. al., to keep all the dimensions whose variance is greater than $9\%$. Hence, we keep 4 dimensions.
 
 Contributions of the attributes to PC1 (principal component one)
 
@@ -1315,7 +1315,6 @@ fviz_contrib(res.mca, choice="var", axes = 4, top =15,
 <img src="notebook_files/figure-html/unnamed-chunk-26-1.png" style="display: block; margin: auto;" />
 
 We show the biplots:
-
 
 
 ```r
