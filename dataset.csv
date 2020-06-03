@@ -1,0 +1,60 @@
+Title,Application Domain,Emergent Behaviour,Cooperative (agent level) ,Behaviour,Autonomy,Knowledge Access,Trigger - first,Trigger - update,Technique
+Pervasive Self-Learning with Multi-modal Distributed Sensors,CPS,No,Yes,Selfish but collaborative,Restricted Autonomy,Neighborhood,No initial knowledge (random),Periodic,Probabilistic
+Distributed W-Learning: Multi-Policy Optimization in Self-Organizing Systems,Traffic,No,Yes,Altruistic locally / Selfish globally,Full Autonomy,Neighborhood,No initial knowledge (random),Not mentioned,Reinforcement Learning
+Self-organized Fault-tolerant Routing in Peer-to-Peer Overlays,Network,Yes,No,Selfish,Full Autonomy,Minimal,From peers and other agents,Periodic,Reinforcement Learning
+Self-organizing Bandwidth Sharing in Priority-Based Medium Access,Network,Yes,No,Selfish,Full Autonomy,Limited,No initial knowledge (random),Action,Game Theory
+Incremental Social Learning Applied to a Decentralized Decision-Making Mechanism: Collective Learning Made Faster,Other,Yes,No,Selfish,Full Autonomy,Minimal,From peers and other agents,Not mentioned,Statistics
+Simulating Human Single Motor Units Using Self-Organizing Agents,Other,No,Yes,Altruistic,Full Autonomy,Limited,No initial knowledge (random),Periodic,Evolutionary Process
+Learning to be Different: Heterogeneity and Efficiency in Distributed Smart Camera Networks,CPS,Yes,No,Selfish,Full Autonomy,Maximal,No initial knowledge (random),Periodic,Reinforcement Learning
+Self-Organizational Reciprocal Agents for Conflict Avoidance in Allocation Problems,Other,No,Yes,Selfish but collaborative,Full Autonomy,Limited,No initial knowledge (random),Periodic,Reinforcement Learning
+A Mutual Influence Detection Algorithm for Systems with Local Performance Measurement,CPS,Yes,No,Selfish,Full Autonomy,Neighborhood,No initial knowledge (random),Periodic,Reinforcement Learning
+Towards Dynamic Epistemic Learning of Actions in Autonomic Multi-agent Systems,Other,No,No,Selfish,Full Autonomy,Maximal,No initial knowledge (random),Task/Episode,Applied Logic
+Cooperative Resource Allocation in Open Systems of Systems,CPS,No,No,Both versions explored,Full Autonomy,Tunable ,Domain knowledge / humans,Learning task threshold achieved,Supervised Learning
+Multiagent Reinforcement Social Learning Toward Coordination in Cooperative Multiagent Systems,Cooperative Game,No,No,Both versions explored,Full Autonomy,Neighborhood,No initial knowledge (random),Task/Episode,Reinforcement Learning
+Efficient and Robust Emergence of Norms Through Heuristic Collective Learning,Cooperative Game,No,No,Altruistic,Full Autonomy,Neighborhood,No initial knowledge (random),Task/Episode,Game Theory
+Reinforcement Learning of Informed Initial Policies for Decentralized Planning,CPS,No,No,Selfish,Full Autonomy,Minimal,From peers and other agents,Learning task threshold achieved,Reinforcement Learning
+Prediction-Based Multi-Agent Reinforcement Learning in Inherently Non-Stationary Environments,CPS,Yes,No,Selfish,Full Autonomy,Minimal,Domain knowledge / humans,Periodic,Reinforcement Learning
+A Reinforcement Learning Approach for Interdomain Routing with Link Prices,Network,Yes,No,Selfish,Full Autonomy,Minimal,No initial knowledge (random),Action,Reinforcement Learning
+Machine Learning in Disruption-tolerant MANETs,Network,No,Yes,Altruistic (collaborative),Full Autonomy,Neighborhood,No initial knowledge (random),Social interaction,Probabilistic
+Mobilized ad-hoc networks: a reinforcement learning approach,Network,No,Yes,Altruistic (collaborative),Full Autonomy,Neighborhood,No initial knowledge (random),Social interaction,Reinforcement Learning
+Autonomous smart routing for network QoS,Network,No,Yes,Altruistic (collaborative),Full Autonomy,Neighborhood,No initial knowledge (random),Action,Reinforcement Learning
+Decentralized Bayesian Reinforcement Learning for Online Agent Collaboration,CPS,No,Yes,Altruistic (collaborative),Full Autonomy,Neighborhood,No initial knowledge (random),Social interaction,Reinforcement Learning
+Modeling Assistant s Autonomy Constraints As a Means for Improving Autonomous Assistant-Agent Design,Market,No,Yes,Selfish,Full Autonomy,Minimal,Not mentioned,Action,Supervised Learning
+Adaptivity at Every Layer: A Modular Approach for Evolving Societies of Learning Autonomous Systems,CPS,No,Yes,Altruistic (collaborative),Full Autonomy,Minimal,Not mentioned,Social interaction,Reinforcement Learning
+Bayesian Interaction Shaping: Learning to Influence Strategic Interactions in Mixed Robotic Domains,CPS,No,No,Altruistic locally / Selfish globally,Full Autonomy,Limited,Domain knowledge / humans,Action,Probabilistic
+Resource Abstraction for Reinforcement Learning in Multiagent Congestion Problems,Traffic,Yes,No,Selfish,Full Autonomy,Minimal,No initial knowledge (random),Not mentioned,Reinforcement Learning
+Multiagent Reinforcement Learning and Self-organization in a Network of Agents,Distributed Task Allocation Problem,No,Yes,Selfish but collaborative,Full Autonomy,Minimal,No initial knowledge (random),Action,Reinforcement Learning
+Batch Reinforcement Learning in a Complex Domain,CPS,No,Yes,Selfish but collaborative,Full Autonomy,Maximal,Domain knowledge / humans,Learning task threshold achieved,Reinforcement Learning
+Co-evolution of Agent Strategies in N-player Dilemmas,Cooperative Game,Yes,No,Selfish,Full Autonomy,Neighborhood,No initial knowledge (random),Learning task threshold achieved,Game Theory
+Self-organisation in an Agent Network via Learning,Distributed Task Allocation Problem,No,Yes,Selfish but collaborative,Full Autonomy,Neighborhood,No initial knowledge (random),Action,Reinforcement Learning
+Self-organization for Coordinating Decentralized Reinforcement Learning,Distributed Task Allocation Problem,Yes,No,Selfish,Full Autonomy,Tunable,No initial knowledge (random),Action,Reinforcement Learning
+Adjustable Autonomy in Real-world Multi-agent Environments,Other,No,Yes,Altruistic,Restricted Autonomy,Maximal,Domain knowledge / humans,Task/Episode,Reinforcement Learning
+How Autonomy Oriented Computing (AOC) Tackles a Computationally Hard Optimization Problem,Cooperative Game,No,Yes,Altruistic,Full Autonomy,Maximal,Domain knowledge / humans,Action,Game Theory
+A Bartering Approach to Improve Multiagent Learning,Other,No,Yes,Selfish,Full Autonomy,Maximal,Domain knowledge / humans,Action,Supervised Learning
+Learning Sequences of Actions in Collectives of Autonomous Agents,CPS,Yes,No,Selfish,Full Autonomy,Minimal,No initial knowledge (random),Action,Reinforcement Learning
+Learning and Decision: Making for Intention Reconciliation,Market,No,Yes,Selfish,Restricted Autonomy,Minimal,No initial knowledge (random),Action,Reinforcement Learning
+Continuous Collaboration: A Case Study on the Development of an Adaptive Cyber-physical System,CPS,No ,Yes,Altruistic (collaborative),Full Autonomy,Maximal,No initial knowledge (random),Learning task threshold achieved,Reinforcement Learning
+RPLLEARN: Extending an Autonomous Robot Control Language to Perform,CPS,No,No,Selfish,Full Autonomy,Minimal,No initial knowledge (random),Task/Episode,Statistics
+Coordination Through Mutual Notification in Cooperative Multiagent Reinforcement Learning,CPS,No,No,Altruistic,Full Autonomy,Limited,No initial knowledge (random),Task/Episode,Reinforcement Learning
+On Topic Selection Strategies in Multi-agent Naming Game,Cooperative Game,Yes,No,Selfish,Full Autonomy,Minimal,No initial knowledge (random),Action,Game Theory
+Inter-institutional Social Capital for Self-Organising Nested Enterprises,CPS,Yes,Yes,Selfish,Full Autonomy,Minimal,No initial knowledge (random),Learning task threshold achieved,Supervised Learning
+Dealing with Unforeseen Situations in the Context of Self-Adaptive Urban Traffic Control: How to Bridge the Gap,Traffic,No,No,Altruistic locally / Selfish globally,Full Autonomy,Minimal,No initial knowledge (random),Learning task threshold achieved,Reinforcement Learning
+Decentralised Progressive Signal Systems for Organic Traffic Control,Traffic,No,Yes,Altruistic (collaborative),Full Autonomy,Neighborhood,Not mentioned,Learning task threshold achieved,Reinforcement Learning
+Learning in Open Adaptive Networks,Distributed Task Allocation Problem,Yes,No,Selfish,Full Autonomy,Minimal,Not mentioned,Not mentioned,Reinforcement Learning
+A Machine Learning Approach to Performance Prediction of Total Order Broadcast Protocols,Network,No,No,Selfish,Full Autonomy,Minimal,Not mentioned,Not mentioned,Supervised Learning
+Self-Adaptive Dissemination of Data in Dynamic Sensor Networks,Network,Yes,No,Selfish,Full Autonomy,Limited,Not mentioned,Not mentioned,Reinforcement Learning
+Autonomic Multi-policy Optimization in Pervasive Systems: Overview and Evaluation,Traffic,No,Yes,Altruistic,Restricted Autonomy,Neighborhood,Not mentioned,Periodic,Reinforcement Learning
+Self-Organising Zooms for Decentralised Redundancy Management in Visual Sensor Networks,CPS,No,Yes,Altruistic,Restricted Autonomy,Limited,No initial knowledge (random),Periodic,Reinforcement Learning
+Towards Data-centric Control of Sensor Networks through Bayesian Dynamic Linear Modelling,CPS,Yes,No,Selfish,Full Autonomy,Minimal,No initial knowledge (random) ,Periodic,Probabilistic
+Firefly-Inspired Synchronization for Improved Dynamic Pricing in Online Markets,Market,No,Yes,Selfish but collaborative,Full Autonomy,Maximal,No initial knowledge (random),Periodic,Swarm System
+Decentralized Approaches for Self-adaptation in Agent Organizations,Other,No ,Yes,Selfish but collaborative,Full Autonomy,Neighborhood,No initial knowledge (random),Periodic,Reinforcement Learning
+Static Dynamic and Adaptive Heterogeneity in Distributed Smart Camera Networks,CPS,No,Yes,Selfish but collaborative,Full Autonomy,Neighborhood,No initial knowledge (random),Task/Episode,Swarm System
+Distributed Cooperation in Wireless Sensor Networks,CPS,No,Yes,Selfish but collaborative,Full Autonomy,Neighborhood,Not mentioned,Periodic,Game Theory and Reinforcement Learning
+Prosumers as Aggregators in the DEZENT Context of Regenerative Power Production,CPS,Yes,No,Selfish,Restricted Autonomy,Tunable ,Not mentioned,Periodic,Reinforcement Learning
+Goal-Aware Team Affiliation in Collectives of Autonomous Robots,CPS,Yes,Yes,Altruistic,Full Autonomy,Limited,No initial knowledge (random),Action,Reinforcement Learning
+Decentralized Collective Learning for Self-Managed Sharing Economies,CPS,Yes,Yes,Tunable,Full Autonomy,Minimal,Domain knowledge / humans,Action,Gradiend Descend
+Constructivist Approach to State Space Adaptation in Reinforcement Learning,Traffic,No,No,Selfish,Full Autonomy,Minimal,Domain knowledge / humans,Task/Episode,Reinforcement Learning
+TSLAM: A Trust-Enabled Self-Learning Agent Model for Service Matching in the Cloud Market,Market,No,Yes,Selfish,Full Autonomy,Minimal,Domain knowledge / humans,Periodic,Supervised Learning
+Autonomous Management of Energy-Harvesting IoT Nodes Using Deep Reinforcement Learning,CPS,Yes,No,Selfish,Full Autonomy,Minimal,Domain knowledge / humans,Task/Episode,Reinforcement Learning
+Reinforcement Learning for Cooperative Overtaking,Traffic,Yes,Yes,Altruistic,Full Autonomy,Neighborhood,Domain knowledge / humans,Periodic,Reinforcement Learning
+New quantum-genetic based OLSR protocol (QG-OLSR) for Mobile Ad hoc Network,Network,No,No,Altruistic,Full Autonomy,Maximal,From peers and other agents,Learning task threshold achieved,Genetic Algorithm and Reinforcement Learning
