@@ -1051,13 +1051,13 @@ dendro.list<-as.character(x$Behaviour)
 circlize_dendrogram(dendro)
 par(mar=c(0,25,0,0),xpd=NA)
 legend(-1.7,1, 
-       legend = c("Altruistic" , "Altruistic (collaborative)", "Altruistic locally/Selfish globally","Both versions explored","Selfish","Selfish but collaborative"), 
-       col = c(1,2,3,4,5,6), 
-       pch = c(20,20,20,20,20,20), bty = "n",  pt.cex = 1, cex = 0.7, 
+       legend = c("Altruistic" , "Altruistic (collaborative)", "Altruistic locally/Selfish globally","Both versions explored","Selfish","Selfish but collaborative","Tunable"), 
+       col = c(1,2,3,4,5,6,7), 
+       pch = c(20,20,20,20,20,20,20), bty = "n",  pt.cex = 1, cex = 0.7, 
        text.col = "black", horiz = FALSE)
 ```
 
-<img src="notebook_files/figure-html/unnamed-chunk-19-1.png" style="display: block; margin: auto;" />
+<img src="notebook_files/figure-html/Behaviour.png" style="display: block; margin: auto;" />
 
 
 ```r
